@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contem Amor | Catálogo Digital</title>
+    <!-- Fontes Google Fonts: Playfair Display (Elegante/Serifada) e Plus Jakarta Sans (Moderna/Legível) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- CABEÇALHO -->
+    <header class="header">
+      <div class="header-container">
+        <div class="brand">
+          <h1 class="brand-title">CONTEM AMOR</h1>
+          <p class="brand-subtitle">Moda infantil feita com carinho.</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- BARRA DE PESQUISA E FILTROS -->
+    <section class="controls-section">
+      <div class="search-container">
+        <svg
+          class="search-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar peças ou tamanhos..."
+          aria-label="Buscar produto"
+        />
+        <button
+          id="clear-search"
+          class="clear-search hidden"
+          aria-label="Limpar busca"
+        >
+          &times;
+        </button>
+      </div>
+
+      <!-- CATEGORIAS (Navegação Horizontal Scrollable) -->
+      <nav class="categories-nav" aria-label="Categorias de produtos">
+        <div class="categories-scroll" id="categories-container">
+          <!-- Injetado dinamicamente via JS -->
+        </div>
+      </nav>
+    </section>
+
+    <!-- MAIN / GRID DE PRODUTOS -->
+    <main class="catalog-container">
+      <!-- Status de Resultados/Filtro -->
+      <div class="catalog-meta">
+        <span id="results-count" class="results-count">Exibindo produtos</span>
+      </div>
+
+      <!-- Grade de Produtos -->
+      <div id="products-grid" class="products-grid">
+        <!-- Injetado dinamicamente via JS -->
+      </div>
+
+      <!-- Estado Vazio (Sem resultados) -->
+      <div id="empty-state" class="empty-state hidden">
+        <div class="empty-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="10" cy="10" r="6"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <h3>Nenhum produto encontrado</h3>
+        <p>
+          Tente buscar por outro termo ou selecione uma categoria diferente.
+        </p>
+        <button id="reset-filters-btn" class="btn-reset">
+          Ver todos os produtos
+        </button>
+      </div>
+    </main>
+
+    <!-- MODAL DE DETALHES DO PRODUTO -->
+    <div
+      id="product-modal"
+      class="modal-backdrop hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-card">
+        <button
+          id="modal-close-btn"
+          class="modal-close"
+          aria-label="Fechar detalhes"
+        >
+          &times;
+        </button>
+
+        <div class="modal-body">
+          <div class="modal-image-wrapper">
+            <img id="modal-img" src="" alt="" loading="lazy" />
+            <span id="modal-category-badge" class="badge"></span>
+          </div>
+
+          <div class="modal-content">
+            <h2 id="modal-title" class="modal-title"></h2>
+            <div id="modal-price" class="modal-price"></div>
+
+            <div class="modal-section">
+              <span class="modal-label">Tamanhos Disponíveis:</span>
+              <div id="modal-sizes" class="sizes-list">
+                <!-- Injetado via JS -->
+              </div>
+            </div>
+
+            <div class="modal-section">
+              <span class="modal-label">Descrição da Peça:</span>
+              <p id="modal-description" class="modal-description"></p>
+            </div>
+
+            <div class="modal-actions">
+              <button id="modal-dismiss-btn" class="btn-dismiss">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+      <div class="footer-container">
+        <h2 class="footer-brand">CONTEM AMOR</h2>
+        <p class="footer-tagline">Moda infantil feita com carinho.</p>
+        <p class="footer-copy">
+          &copy; 2026 Contem Amor. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
